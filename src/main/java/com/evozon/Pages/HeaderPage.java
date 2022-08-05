@@ -23,6 +23,9 @@ public class HeaderPage extends BasePage {
     @FindBy(css = "select#select-language")
     WebElement languages;
 
+    @FindBy(css="input#search")
+    WebElement searchBar;
+
     private Select selectLanguages;
 
     public String getWelcomeText() {
@@ -35,13 +38,17 @@ public class HeaderPage extends BasePage {
     }
 
     public void changeToNextLanguage() {
-        //Select selectLanguages=new Select(languages);
         selectLanguages.selectByIndex(1);
     }
 
     public WebElement getSelectedLanguage() {
 
         return selectLanguages.getFirstSelectedOption();
+    }
+
+    public void search(String keyword){
+        searchBar.sendKeys(keyword);
+        searchBar.submit();
     }
 
 
