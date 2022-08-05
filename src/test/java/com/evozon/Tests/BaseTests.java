@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     @Before
     public void setup(){

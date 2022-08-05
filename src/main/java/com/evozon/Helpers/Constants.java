@@ -6,5 +6,5 @@ public class Constants {
     public static final String EMAIL="helo@h.com";
     public static final String PASSWORD="qawsed";
     public static final String USERNAME="name m last";
-
+    public static final String LANGUAGE="French";
 }

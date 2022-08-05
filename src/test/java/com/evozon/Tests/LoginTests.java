@@ -13,19 +13,15 @@ public class LoginTests extends BaseTests {
 
     @Test
     public void loginTest() {
-        /*Navigate to login URL
-         *Perform login
-         * Validate correct URL
-         * Validate correct user
-         * */
 
         loginPage = new LoginPage(driver);
         headerPage=new HeaderPage(driver);
-
         loginPage.getLoginPage();
         loginPage.login(Constants.EMAIL, Constants.PASSWORD);
-        Assert.assertEquals(Constants.BASE_URL + "/customer/account/", driver.getCurrentUrl());
-        headerPage.verifyCorrectnessUsername(Constants.USERNAME);
+        String welcomeText=headerPage.getWelcomeText();
+        String extractedUsername = welcomeText.substring(welcomeText.indexOf(" ") + 1);
+        extractedUsername = extractedUsername.substring(0, extractedUsername.length() - 1);
+        Assert.assertTrue(extractedUsername.equalsIgnoreCase(Constants.USERNAME));
     }
 
 }
