@@ -8,4 +8,5 @@ public class Constants {
     public static final String USERNAME="name m last";
     public static final String LANGUAGE="French";
     public static final String KEY_WORD="dress";
+    public static final String OPTION="Sale";
 }
